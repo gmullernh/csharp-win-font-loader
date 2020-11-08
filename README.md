@@ -1,6 +1,8 @@
-# winfontloader
-A simple Windows loader for font files.
+# Windows font loader
 
+A simple console application to load font files (.tff and other formats) on Windows machines for the current user session.
+Those loaded fonts become available for all applications in the user session.
+Load fonts on-demand and doesn't require installing. This allows for a faster startup on the system.
 
 ## Documentation
 
