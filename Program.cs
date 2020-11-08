@@ -16,24 +16,9 @@ namespace winfontloader
             try
             {
                 string targetFolder = string.Empty;
-
-                // while(!Directory.Exists(targetFolder)) 
-                // {
-                //     Console.WriteLine("Type the directory path to load from or press Escape to exit.");
-                //     string typed = Console.ReadLine();
-
-                //     if(typed == "exit") throw new Exception();
-                //     targetFolder = typed;
-                // }
-
                 LoadFonts(Console.ReadLine());
-
             }
             catch
-            {
-                Console.WriteLine("Exiting1!");
-            }
-            finally 
             {
                 Console.WriteLine("Exiting!");
             }
