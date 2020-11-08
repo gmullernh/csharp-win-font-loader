@@ -12,12 +12,33 @@ namespace winfontloader
         static void Main(string[] args)
         {
             // https://docs.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-addfontresourcea
-            LoadFonts(Console.ReadLine());  
+
+            try
+            {
+                string targetFolder = string.Empty;
+
+                while(!Directory.Exists(targetFolder)) 
+                {
+                    Console.WriteLine("Type a valid directory path to load from or type 'exit' to quit.");
+                    string typed = Console.ReadLine();
+
+                    if(typed == "exit") throw new Exception();
+                    targetFolder = typed;
+                }
+
+                LoadFonts(targetFolder);
+                Console.ReadKey();
+            }
+            catch
+            {
+                Console.WriteLine("Exiting!");
+            }
+
         }
 
         static void LoadFonts(string targetFolder) 
         {
-            Console.WriteLine("Loading fonts into system!");
+            Console.WriteLine($"Loading fonts from {targetFolder} into system!");
 
             // All possible font types that can be loaded.
             Func<string, bool> predicate = f => 
