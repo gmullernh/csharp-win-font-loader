@@ -12,17 +12,7 @@ namespace winfontloader
         static void Main(string[] args)
         {
             // https://docs.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-addfontresourcea
-
-            try
-            {
-                string targetFolder = string.Empty;
-                LoadFonts(Console.ReadLine());
-            }
-            catch
-            {
-                Console.WriteLine("Exiting!");
-            }
-
+            LoadFonts(Console.ReadLine());  
         }
 
         static void LoadFonts(string targetFolder) 
